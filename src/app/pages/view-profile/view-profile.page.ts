@@ -43,8 +43,8 @@ export class ViewProfilePage implements OnInit {
         if(this.id != undefined){
           this.profileService.getJSON().subscribe(data => {
             this.introSlider = data.info;
-            this.introSlider.filter(data => {
-              data.id == this.id
+            this.currentProfile = this.introSlider.filter(data => {
+              return data.id == this.id
             })
             this.images = this.currentProfile[0].multiImages;
             this.imageInfo = this.currentProfile[0].imageInfo;
@@ -55,18 +55,6 @@ export class ViewProfilePage implements OnInit {
       error => console.error(error)
     );
 
-      // this.id = 2
-      //   if(this.id != undefined){
-      //     this.profileService.getJSON().subscribe(data => {
-      //       this.introSlider = data.info;
-      //       this.currentProfile = this.introSlider.filter(data => {
-      //         return data.id == this.id
-      //       })
-      //       this.images = this.currentProfile[0].multiImages;
-      //       this.imageInfo = this.currentProfile[0].imageInfo;
-      //       this.imageName = this.currentProfile[0].imageName;
-      //   });
-      // }
   }
 
   goback() {
