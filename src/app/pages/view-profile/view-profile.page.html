@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar class="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home" style="color:white;zoom:1.3"></ion-back-button>
+  </ion-buttons>
+    <ion-title style="text-align: center;color:white">View Profile</ion-title>
+    <ion-icon slot="end"></ion-icon>
+</ion-toolbar>
+</ion-header>
+
+<ion-content scroll="false" class="cards-bg">
+  <ion-card>
+    <ion-card-header>
+      <ion-slides #slider class="swiper-container swiper-pagination"  pager [options]="slideOpts">
+        <ion-slide *ngFor="let slider of images" style="display: flex;flex-direction: column">
+            <ion-img [src]="slider"></ion-img>
+        </ion-slide>
+      </ion-slides>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-card-title>
+        <b>{{imageName}}</b>
+        </ion-card-title>
+        <p>{{imageInfo}}</p>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

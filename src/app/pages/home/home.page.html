@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar class="toolbar">
+      <ion-buttons slot="start">
+        <ion-menu-button style="color:white;"></ion-menu-button>
+      </ion-buttons>
+      <ion-title style="text-align: center;color:white">Pending Profiles</ion-title>
+      <ion-icon slot="end"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content scroll="false" class="cards-bg">
+  <ion-slides #slider class="swiper-container swiper-pagination"  pager [options]="slideOpts">
+    <ion-slide *ngFor="let slider of introSlider" style="display: flex;flex-direction: column">
+      <ion-card>
+        <ion-card-header>
+         <ion-img [src]="slider.image" (click)="routeToViewProfile(slider.id)"></ion-img>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-card-title>
+            <b>{{slider.imageName}}</b>
+            </ion-card-title>
+            <p>{{slider.imageInfo}}</p>
+            <ion-row>
+              <ion-col>
+            <ion-button shape="round">No</ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button shape="round" (click)="routeToViewProfile(slider.id)">Yes</ion-button>
+            </ion-col>
+            </ion-row>
+        </ion-card-content>
+      </ion-card>
+
+    </ion-slide>
+  </ion-slides>
+
+  <ion-row>
+    <ion-col size="3" ></ion-col>
+  <ion-col size="6" class="ion-text-center">
+    <ion-button shape="round" (click)="routeToDailyProfile()">Daily Profiles</ion-button>
+  </ion-col>
+  <ion-col size="3" ></ion-col>
+</ion-row>
+  
+</ion-content>

@@ -24,3 +24,33 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+.toolbar {
+    --background: #0966a2;
+    --border-width: 1px solid #0966a2;
+    --border-color: #0966a2;
+    padding-right: 5%;
+  }
+
+  ion-card {
+    height: 90%;
+    width: 90%;
+  }
+  
+  ion-card > ion-card-content {
+    height: 150px; 
+  }
+
+ 
+  ion-img {
+    height: 200px;
+    width: 100%
+  }
+
+  .swiper-container {
+    position: relative;
+    
+  }
+  .swiper-pagination-bullet-active{
+    --bullet-background:#0f5b8c ;
+  }
