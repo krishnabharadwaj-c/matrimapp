@@ -1,0 +1,7 @@
+{
+  "name": "ionicMatri",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
